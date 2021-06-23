@@ -1,0 +1,33 @@
+<div>
+<mat-card>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Название серии </span>
+        <input class="form-control" list = "data1" type="text"  [(ngModel)]="sers.name">
+        <datalist id="data1">
+            <option>{{ sers.name }} </option>
+            </datalist>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Длительность серии </span>
+        <input class="form-control" list = "data2" type="number" [(ngModel)]="sers.duration">
+        <datalist id="data2">
+            <option>{{ sers.duration }} </option>
+            </datalist>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Сезон </span>
+        <input class="form-control" list = "data3" type="number" [(ngModel)]="sers.series">
+        <datalist id="data3">
+            <option>{{ sers.series }} </option>
+            </datalist>
+    </mat-form-field>
+</mat-card>
+
+<mat-card>
+    <button mat-flat-button color="primary" (click)='onSubmit(sers)'> Выполнить </button>
+    <button mat-flat-button color="primary" [routerLink]="['/Serial', sers.serId]"> Отмена </button>
+</mat-card>
+</div>

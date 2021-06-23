@@ -1,0 +1,11 @@
+<nav>
+    <div class="card">
+        <h5 class="card-header" > Описание </h5>
+        <div class="card-body">
+          <p> Название: {{video.name}}</p>
+          <p class="card-text"> Длительность: {{video.duration}}</p>
+          <p class="card-text"> Сезон: {{video.series}}</p>
+        </div>
+      </div>
+      <button mat-button [routerLink]="['/Serial', video.serId]">Вернуться</button>
+    </nav>

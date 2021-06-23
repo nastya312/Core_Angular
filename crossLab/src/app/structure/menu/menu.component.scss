@@ -1,0 +1,19 @@
+
+.example-container {
+  min-height: 250px;
+  
+
+  mat-drawer {
+ 
+    background-color: rgb(167, 219, 253);
+    margin-right: 10px;
+    height: 100%;
+    line-height: 100%; 
+  }
+  
+  mat-drawer-content {
+   
+    height: 100%;
+    padding: 10px;
+  }
+}

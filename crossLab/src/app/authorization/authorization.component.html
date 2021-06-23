@@ -1,0 +1,22 @@
+<nav>
+
+    <form *ngIf='!isLoggedIn'>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input class="form-control" name="username" type="email" matInput #login>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input class="form-control" name="username" type="password" matInput #password>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)='token(login.value, password.value)'>Submit</button>
+    
+    </form>
+    <form *ngIf='isLoggedIn'>
+    <button type="submit" class="btn btn-primary" (click)='logout()'>Logout</button>
+    </form>
+    
+    
+    
+    </nav>

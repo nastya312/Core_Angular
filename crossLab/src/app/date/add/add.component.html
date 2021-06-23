@@ -1,0 +1,54 @@
+<mat-card>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Название фильма </span>
+        <input class="form-control" name="username" list="data1" type="text" [(ngModel)]="sers.name">
+        <datalist id="data1">
+            <option>{{ sers.name }} </option>
+            </datalist>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Жанр </span>
+        <input class="form-control" name="username" list="data2" type="text" [(ngModel)]="sers.genre">
+        <datalist id="data2">
+            <option>{{ sers.genre }} </option>
+            </datalist>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Возрастная категория </span>
+        <input class="form-control" name="username" list="data3" type="number" [(ngModel)]="sers.age_limit">
+        <datalist id="data3">
+            <option>{{ sers.age_limit }} </option>
+            </datalist>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Рейтинг  </span>
+        <input class="form-control" name="username" list="data4" type="number" [(ngModel)]="sers.rating">
+        <datalist id="data4">
+            <option>{{ sers.rating }} </option>
+            </datalist>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Год </span>
+        <input class="form-control" name="username" list="data5" type="number" [(ngModel)]="sers.year">
+        <datalist id="data5">
+            <option>{{ sers.year }} </option>
+            </datalist>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label></mat-label>
+        <span> Страна </span>
+        <input class="form-control" name="username" list="data6" [(ngModel)]="sers.country">
+        <datalist id="data6">
+            <option>{{ sers.country }} </option>
+            </datalist>
+    </mat-form-field>
+</mat-card>
+<mat-card>
+    <button mat-flat-button color="primary" (click)='onSubmit(sers)'>Выполнить</button>
+    <button mat-flat-button color="primary" [routerLink]="['/ListDate']">Отменить</button>
+</mat-card>

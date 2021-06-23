@@ -1,0 +1,30 @@
+<div>
+    <button mat-button color="accent" [hidden]='!res' [routerLink]="['/Add']"> Добавить </button> 
+    <button mat-button color="accent" [routerLink]="['/Filtr']"> Фильтры </button> 
+
+    <table mat-table [dataSource]="sers">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> id </th>
+            <td mat-cell *matCellDef="let ser"> {{ ser.id }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> name </th>
+            <td mat-cell *matCellDef="let ser"> {{ ser.name }} </td>         
+        </ng-container>
+
+        <ng-container matColumnDef="summary">
+            <th mat-header-cell *matHeaderCellDef> summary </th>
+            <td mat-cell *matCellDef="let ser"> 
+                <button mat-button [routerLink]="['/Serial', ser.id]" > look </button>
+                <button mat-button color="primary" [hidden]='!res' [routerLink]="['/Edit', ser.id]"> edit </button>
+                <button mat-button color="accent" [hidden]='!res' (click)='onSubmit(ser.id)' > delete </button>        
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+    
+</div>

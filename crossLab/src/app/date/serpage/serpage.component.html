@@ -1,0 +1,46 @@
+<nav>
+    <div class="card">
+        <h5 class="card-header" > Описание </h5>
+        <div class="card-body">
+          <p> Название: {{Serial.name}}</p>
+          <p class="card-text"> Жанр: {{Serial.genre}}</p>
+          <p class="card-text"> Возрастная категория: {{Serial.age_limit}}</p>
+          <p class="card-text"> Рейтинг: {{Serial.rating}}</p>
+          <p class="card-text"> Год: {{Serial.year}}</p>
+          <p class="card-text"> Страна: {{ Serial.country }}</p>
+        </div>
+      </div>
+    </nav>
+    <div><button mat-button [hidden]='!res' [routerLink]="['/AddVideo', Serial.id]">Добавить</button>
+        
+    </div>
+    <div> <button mat-button [routerLink]="['/ListDate']">Вернуться</button></div>
+
+
+  <div>
+    <table mat-table [dataSource]="videos" class="table">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> id </th>
+            <td mat-cell *matCellDef="let vid"> {{ vid.id }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> name </th>
+            <td mat-cell *matCellDef="let vid"> {{ vid.name }} </td>
+        </ng-container>
+
+    
+        <ng-container matColumnDef="summary">
+            <th mat-header-cell *matHeaderCellDef> summary </th>
+            <td mat-cell *matCellDef="let vid">
+                <button mat-button [routerLink]="['/Video', vid.id]"> look </button>
+                <button mat-button color="primary" [hidden]='!res' [routerLink]="['/EditVideo', vid.id]"> edit </button>
+                <button mat-button color="accent" [hidden]='!res' (click)='onSubmit(vid.id)'> delete </button>  
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+
+    </table>
+    
+</div>
